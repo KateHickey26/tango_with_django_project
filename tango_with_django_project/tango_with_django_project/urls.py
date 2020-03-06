@@ -24,4 +24,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('rango/', include('rango.urls')),
     path('admin/', admin.site.urls),
+    # django-registration-redux package provides different reg backends. e.g. may want two step process where an email is sent.
+    # this will use a simple one step process.
+    path('accounts/', include('registration.backends.simple.urls')), # added after login and registration authentication
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

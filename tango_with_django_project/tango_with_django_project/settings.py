@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -108,6 +109,20 @@ USE_L10N = True
 
 USE_TZ = True
 
+# if true, users can register
+REGISTRATION_OPEN = True
+
+# if true, user will be logged in after registering automatically
+REGISTRATION_AUTO_LOGIN = True
+
+# the url django redirects to after login
+# points to homepage
+REGISTRATION_URL = 'rango:index'
+
+# the page users are directed to if not logged in
+LOGIN_URL = 'auth_login'
+# specifiyng url mapping names above instead of actual URLS, to  make a more versitile
+# configuration
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
